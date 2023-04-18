@@ -12,13 +12,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/")
 public class UsuarioController {
 
     @Autowired
     private IUsuarioService service;
 
 
-    @GetMapping
+    @GetMapping("/listar")
     public List<Usuario> listar(){
         return service.listar();
     }

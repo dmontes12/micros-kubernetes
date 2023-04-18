@@ -3,6 +3,8 @@ package org.montes.springcloud.micro.usuarios.models.entity;
 
 import jakarta.persistence.*;
 
+
+
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
