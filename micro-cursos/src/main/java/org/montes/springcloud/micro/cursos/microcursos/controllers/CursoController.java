@@ -3,6 +3,7 @@ package org.montes.springcloud.micro.cursos.microcursos.controllers;
 
 import org.montes.springcloud.micro.cursos.microcursos.entity.Curso;
 import org.montes.springcloud.micro.cursos.microcursos.services.ICursoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.Optional;
 @RequestMapping("/")
 public class CursoController {
 
+    @Autowired
     private ICursoService cursoService;
 
     @GetMapping
@@ -49,7 +51,7 @@ public class CursoController {
         }
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Long id){
         Optional<Curso> optionalCurso = cursoService.porId(id);
 
