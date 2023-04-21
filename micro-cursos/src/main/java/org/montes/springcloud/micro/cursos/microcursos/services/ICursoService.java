@@ -1,6 +1,6 @@
 package org.montes.springcloud.micro.cursos.microcursos.services;
 
-import org.montes.springcloud.micro.cursos.microcursos.entity.Curso;
+import org.montes.springcloud.micro.cursos.microcursos.models.entity.Curso;
 
 import java.util.List;
 import java.util.Optional;
