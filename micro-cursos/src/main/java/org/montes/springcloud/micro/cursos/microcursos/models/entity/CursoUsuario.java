@@ -22,11 +22,11 @@ public class CursoUsuario {
         this.id = id;
     }
 
-    public Long getUsuario() {
+    public Long getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuario(Long usuarioId) {
+    public void setUsuarioId(Long usuarioId) {
         this.usuarioId = usuarioId;
     }
 
