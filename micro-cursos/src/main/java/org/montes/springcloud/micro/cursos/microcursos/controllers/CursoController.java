@@ -28,7 +28,7 @@ public class CursoController {
 
     @GetMapping("{id}")
     public ResponseEntity<?> porId(@PathVariable Long id) {
-        Optional<Curso> curso = cursoService.porId(id);
+        Optional<Curso> curso = cursoService.porIdConUsuarioDetalle(id);
 
         if(curso.isPresent()){
             return ResponseEntity.ok(curso);
@@ -79,8 +79,7 @@ public class CursoController {
             o = cursoService.asignarUsuario(usuario, cursoId);
         } catch (FeignException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(Collections.singletonMap("mensaje", "No existe el usuario por " +
-                            "el id o error en la comunicacion: " + e.getMessage()));
+                    .body(Collections.singletonMap("mensaje", "No existe el usuario por " +                            "el id o error en la comunicacion: " + e.getMessage()));
         }
         if (o.isPresent()) {
             return ResponseEntity.status(HttpStatus.CREATED).body(o.get());

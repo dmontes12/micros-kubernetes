@@ -11,6 +11,7 @@ public interface IUsuarioService {
     Usuario guardar(Usuario usuario);
     void elimiar(Long id);
     Optional<Usuario> porEmail(String email);
+    List<Usuario> listarPorIds(Iterable<Long> ids);
 
 
 
